@@ -1,0 +1,14 @@
+<h1>Your Posts</h1>
+
+{{#each posts}}
+    <div class="post">
+        <h2><a href="/post/edit/{{this.id}}">{{this.title}}</a></h2>
+        <p>{{this.content}}</p>
+        <form action="/apis/posts/delete/{{this.id}}" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+        <hr>
+    </div>
+{{/each}}
+
+<a href="/post/new">Add New Post</a>
